@@ -1,6 +1,6 @@
 ## google-uploader
 
-### Implements the Google Drive API with OAuth authentication to upload Wordpress content, database and source files to Google Drive
+#### Implements the Google Drive API with OAuth authentication to upload Wordpress content, database and source files to Google Drive
 
 ### To run:
 `./uploader.py`
