@@ -6,9 +6,9 @@
 # 3. PHP config file
 
 import os
-from Google import Create_Service
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
+from Google import Create_Service
 from google.oauth2 import service_account
 
 def uploader(filetype, name):
@@ -23,14 +23,14 @@ def uploader(filetype, name):
   # Create service object
   service = build(API_NAME, API_VERSION, credentials=CREDS)
 
-  # Upload into the website root folder
+  # Upload into the 8thpath root folder
   zip_folder_id = '17xQLUIuDk6EDJ9u6nD5IRmfKiMUvMx_I'
   sql_folder_id = '12d0VwNkRdvN9h4_GSMZS_OB2qaBw5dVY'
   config_folder_id = '1K7Q9Y7HUTWVYQN9LWde6bI1d8yRSuzRG'
 
   ### Start the ZIP upload process ###
   if filetype == "zip":
-    print("Uploading zip archive...")
+    print("Uploading zip archive...", end='')
     file_metadata = {
       'name': [name],
       'parents': [zip_folder_id]
@@ -44,7 +44,7 @@ def uploader(filetype, name):
 
   #### Start the SQL upload process ###
   if filetype == "sql":
-    print("Uploading SQL database...")
+    print("Uploading SQL database...", end='')
     file_metadata = {
       'name': [name],
       'parents': [sql_folder_id]
@@ -58,7 +58,7 @@ def uploader(filetype, name):
 
   ### Start the CONFIG upload process ###
   if filetype == "config":
-    print("Uploading PHP config file...")
+    print("Uploading PHP config file...", end='')
     file_metadata = {
       'name': [name],
       'parents': [config_folder_id]
@@ -69,7 +69,6 @@ def uploader(filetype, name):
 
     # Tell us when it's done
     print("Done")
-
 
 def main():
   uploader("zip", "wp-content.zip")
