@@ -3,7 +3,7 @@
 # Shell script creates backups for the 8thpath.net Wordpress blog
 
 echo "Backing up wp-content"
-zip -q -r  files/zips/wp-content.zip /var/www/html/8thpath
+zip -q -r files/zips/wp-content.zip /var/www/html/8thpath
 sudo chown andrew:andrew files/zips/wp-content.zip
 
 echo "Backing up SQL database"
